@@ -8,10 +8,17 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid RenderTransformOrigin="0.09,0.502">
-        <Button>
-            <Button Content="Hellow" Height="144" Width="253" VerticalAlignment="Top" Click="Button_Click"/>
-        </Button>
-
+    <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+        <StackPanel>
+            <TextBox x:Name="InputTextBoxIn" PlaceholderText="Enter text here" HorizontalAlignment="Stretch" Width="600" Height="80"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="20">
+                <Button x:Name="enter" Content="Enter" FontSize="12" Width="120" Height="60" Margin="20" Click="enter_Click" Background="ForestGreen"/>
+                <Button x:Name="randomizeInput" Content="Randomize Input" FontSize="12" Width="120" Height="60" Margin="20" Click="randomizeInput_Click" Background="Chocolate"/>
+                <Button x:Name="clear" Content="Clear" FontSize="12" Width="120" Height="60" Margin="20" Click="clear_Click" Background="Crimson"/>
+            </StackPanel>
+            <TextBox x:Name="OutputTextBoxOut" PlaceholderText="Output text here" HorizontalAlignment="Stretch" Width="600" Height="80" IsReadOnly="True"/>
+        </StackPanel>
     </Grid>
+
+
 </Page>
