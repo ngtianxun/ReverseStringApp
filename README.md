@@ -24,6 +24,7 @@ ReverseStringApp is a versatile application designed to manipulate string inputs
 - **Operating System:** Windows 10, version 1809 (October 2018 Update) or later. Windows 11 is also supported.
 - **PowerShell:** Ensure PowerShell is installed and updated to the latest version available for your system.
 - **.NET Framework:** Version 4.8 or later.
+- **Developer mode:** Ensure developer mode is enabled, or just run the Install script which will guide you through the installation process.
 
 ### Installation Procedure
 
