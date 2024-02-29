@@ -2,7 +2,7 @@
 
 ## Introduction
 
-ReverseStringApp is a versatile application designed to manipulate string inputs by users in various ways, including reversing the string, randomizing the characters, and clearing inputs and outputs for a fresh start. It's built using a Universal Windows Platform (UWP) interface for seamless user interaction, with a robust backend processing using a full trust Win32 Runtime Process (WRP).
+ReverseStringApp is a versatile application designed to manipulate string inputs by users in various ways, including reversing the string, randomizing the characters, and clearing inputs and outputs for a fresh start. It's built using a Universal Windows Platform (UWP) interface for seamless user interaction, with a robust backend processing using a full trust WPF.
 
 ## Table of Contents
 
@@ -39,7 +39,7 @@ ReverseStringApp is a versatile application designed to manipulate string inputs
 
 - **Input:** A text box is provided for users to enter the string they wish to process.
 - **Process Button:** A dedicated button is available to submit the entered text to the backend for processing.
-- **Backend Processing:** Utilizes a full trust Win32 Runtime Process (WRP) to reverse the string.
+- **Backend Processing:** Utilizes a full trust WPF to reverse the string.
 - **Output Display:** A read-only text box displays the processed result, ensuring users cannot modify it directly.
 - **Randomize Function:** An additional button is included to shuffle the input string in a random order.
 - **Clear Function:** A clear button is available to erase all text from the input and output text boxes, resetting the application state.
@@ -47,16 +47,16 @@ ReverseStringApp is a versatile application designed to manipulate string inputs
 ### Design
 
 - **User Interface:** The application employs a Universal Windows Platform (UWP) interface for user interaction.
-- **Backend Processing:** A full trust capability WRP process operates in the background, initiated by the UWP front-end.
-- **Integration:** A packaging solution combines both the UWP and WRP components, ensuring seamless operation.
+- **Backend Processing:** A full trust capability WPF process operates in the background, initiated by the UWP front-end.
+- **Integration:** A packaging solution combines both the UWP and WPF components, ensuring seamless operation.
 
 ### Communication Architecture
 
-- The primary communication channel between the UWP front-end and the WRP backend is through AppServices, hosted within the UWP's App.xaml file. This background process facilitates communication without engaging in backend computations.
+- The primary communication channel between the UWP front-end and the WPF backend is through AppServices, hosted within the UWP's App.xaml file. This background process facilitates communication without engaging in backend computations.
 - Alternative inter-process communication (IPC) methods such as named pipes, sockets, or file I/O can be utilized, but AppServices is chosen for its simplicity and integration with UWP.
-- Upon application launch, the WRP process initiates a connection to the UWP's AppService. The UWP then maintains this connection for subsequent requests, such as sending input strings to the WRP for processing.
-- The lifecycle of the WRP process is tied to the UWP AppService connection. Closing this connection will also terminate the WRP process to prevent orphaned processes.
-- Requests sent from the UWP to the WRP are handled efficiently, ensuring responsive application performance.
+- Upon application launch, the WPF process initiates a connection to the UWP's AppService. The UWP then maintains this connection for subsequent requests, such as sending input strings to the WPF for processing.
+- The lifecycle of the WPF process is tied to the UWP AppService connection. Closing this connection will also terminate the WPF process to prevent orphaned processes.
+- Requests sent from the UWP to the WPF are handled efficiently, ensuring responsive application performance.
 
 ## Test Scenarios
 
